@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{>header}}
+    <link rel="stylesheet" href="css/weather.css">
+    <title>Document</title>
+</head>
+<body>
+    {{>navbar}}
+
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="main_content">
+                    <form class="temp_form">
+                        <input type="text" id="cityName" placeholder="Enter your city name" autocomplete="off">
+                        <input type="submit" value="search" id="submitBtn">
+                    </form>
+                </div>
+            
+            <div class="tempInformation">
+                <div class="top_layer">
+                    <p id="day">Tuesday</p>
+                    <p id="today_date">8 Sept</p>
+                </div>
+                <div class="main_layer">
+                    <p id="city_name">Get output here</p>
+                    <div class="middle_layer data_hide">
+                        <p id="temp">0<sup>o</sup>C</p>
+                        <p id="temp_status"><i class="fa fa-sun"></i></p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+     <footer>
+      <p>Created with ❤ by Faizan </p>
+    </footer>
+    <script>
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Sat"];
+        const day = document.getElementById('day');
+        const months = ["Jan","Feb","March","April","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+        const today_date = document.getElementById('today_date');
+        const setDate = () => {
+            today_date.innerHTML = `${date.getDate()} ${months[date.getMonth()]}`;
+            day.innerHTML=weekday[date.getDay()];
+        }
+        let date = new Date();
+        setDate();
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
